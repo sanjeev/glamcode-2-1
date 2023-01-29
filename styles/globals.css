@@ -1565,6 +1565,12 @@ a:hover {
   max-height: 300px;
   object-fit: fill;
 }
+.accordion-item {
+  margin-bottom: 5px;
+}
+.accordion-button {
+  font-size: 13px !important;
+}
 .popimag {
   object-fit: fill;
   width: 100%;
