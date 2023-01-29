@@ -11,6 +11,7 @@ import Head from 'next/head'
 import ViewDetails from '../../../components/ViewDetails/ViewDetails'
 import AddToCart from '../../../components/Cart/AddToCart';
 import { Link } from 'react-scroll';
+
 export default function Categoryslug() {
     const router = useRouter()
     const [mainCategory, setMaincategory] = React.useState([]);
@@ -50,6 +51,24 @@ export default function Categoryslug() {
         localStorage.setItem('mid', id);
         //router.push('/category/' + slug + '/' + localStorage.getItem('cityname').toLowerCase())
     }
+
+
+    const [position, setPosition] = useState(window.pageYOffset)
+    const [visible, setVisible] = useState(true)
+    useEffect(() => {
+        const handleScroll = () => {
+            let moving = window.pageYOffset
+
+            setVisible(position > moving);
+            setPosition(moving)
+        };
+        window.addEventListener("scroll", handleScroll);
+        return (() => {
+            window.removeEventListener("scroll", handleScroll);
+        })
+    })
+
+    const cls = visible ? "visible" : "hidden";
     return (
         <>
             <Head>
@@ -81,7 +100,7 @@ export default function Categoryslug() {
                         </div>
                     </Container>
                     {categories ? (<>
-                        <div className="g-3 g-sm-6 gap-2 categories-top-header" style={{ padding: '20px', background: '#f3f3f3' }}>
+                        <div className="g-3 g-sm-6 gap-2 categories-top-header">
                             {categories?.map((x, i) =>
                                 <Link spy={true}
                                     // smooth={true}
@@ -214,7 +233,10 @@ export default function Categoryslug() {
                                     </div>)}
                                 </Row>
                             </Container>
-                            <div className="menu-category-d" onClick={handleShow}>Menu</div>
+
+                            <div className={`menu-category-d ${cls}`} onClick={handleShow}>Menu</div>
+
+
                             <Modal
                                 show={show}
                                 onHide={handleClose}
