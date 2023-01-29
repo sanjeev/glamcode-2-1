@@ -14,6 +14,7 @@ function Modalpup(props) {
     const selecthandleclick = (locId, locName, locAddress, locationslug, locMinBookingAmount) => {
         localStorage.setItem("id", locId);
         localStorage.setItem("cityname", locName);
+
         localStorage.setItem("locAddress", locAddress);
         localStorage.setItem("loc_min_booking_amount", locMinBookingAmount);
 

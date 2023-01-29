@@ -110,7 +110,9 @@ export default function Login() {
                                 theme: "light",
                             });
 
-                            Router.push('/')
+                            localStorage.getItem('page') ? Router.push('/checkout') : Router.push('/')
+
+
 
 
 

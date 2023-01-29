@@ -275,6 +275,9 @@ function handleResponse(response) {
         if (response.statusText === 'Unauthorized') {
             localStorage.removeItem("userDetails");
             localStorage.removeItem("userdata");
+            localStorage.removeItem("gluserDetails");
+
+            localStorage.removeItem("page");
             window.location = '/';
         }
     } else {

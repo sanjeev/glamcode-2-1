@@ -172,7 +172,7 @@ function Payment() {
             })
         );
     }
-
+    let minAmount = localStorage.getItem("loc_min_booking_amount") || "0"
     return (<>
         {!user && <LoginModal show={!user} />}
         <Coupon show={couponModal} coupon={coupon_id}
@@ -405,7 +405,10 @@ function Payment() {
                                 } else {
                                     openPayModal()
                                 }
-                            }} >{sending ? "Booking" : "Book Order"}</button>
+                            }} >{sending ?
+                                minAmount >= finalTotal ? "ABC" :
+                                    "Booking" :
+                                minAmount >= finalTotal ? "ABC" : "Book Order"}</button>
                     </div>
                 </Col>
                 <Col md={1}></Col>

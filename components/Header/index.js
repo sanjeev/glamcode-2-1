@@ -144,7 +144,11 @@ function Header() {
                                         {localStorage.getItem('gluserDetails') ? <div className="sidemenu-outbox-d"
                                             onClick={() => {
                                                 dispatch(userData(null));
-                                                localStorage.setItem('gluserDetails', "")
+                                                localStorage.removeItem("userDetails");
+                                                localStorage.removeItem("userdata");
+                                                localStorage.removeItem("page");
+                                                localStorage.removeItem("gluserDetails");
+
                                                 onClick()
                                             }}
                                         >

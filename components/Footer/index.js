@@ -509,8 +509,9 @@ function Footer() {
                                 onClick={() => {
                                     let minAmount = localStorage.getItem("loc_min_booking_amount") || "0"
                                     minAmount = parseInt(minAmount)
+                                    localStorage.setItem('page', 'checkout');
                                     if (minAmount > total) {
-                                        toast("Add more items to checkout");
+                                        toast.error("Add more items to checkout");
                                     } else if (!localStorage.getItem('gluserDetails')) {
                                         router.push("/login")
                                     } else {
