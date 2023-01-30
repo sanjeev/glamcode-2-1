@@ -384,7 +384,9 @@ function Payment() {
                     </div>
                     <div className="checkoutBtn-container ">
                         <button className="checkoutBtn-all" type='button'
-                            disabled={cart.length === 0 || sending}
+                            //disabled={cart.length === 0 || sending}
+                            disabled={minAmount >= finalTotal ? "true" : ""}
+
                             onClick={() => {
                                 if (!userAddress || userAddress.length === 0) {
                                     toast('Add address to book order', {
@@ -406,9 +408,9 @@ function Payment() {
                                     openPayModal()
                                 }
                             }} >{sending ?
-                                minAmount >= finalTotal ? "ABC" :
-                                    "Booking" :
-                                minAmount >= finalTotal ? "ABC" : "Book Order"}</button>
+
+                                "Booking" :
+                                "Book Order"}</button>
                     </div>
                 </Col>
                 <Col md={1}></Col>

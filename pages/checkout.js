@@ -5,7 +5,7 @@ import moment from 'moment';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Login from '../components/Login';
-
+import { useSelector } from 'react-redux';
 function Checkout() {
     const router = useRouter();
     var settings = {
@@ -17,6 +17,7 @@ function Checkout() {
         loop: false
 
     };
+
     const [active, setActive] = useState(0);
     const [isselected, setIsselected] = useState(-1);
     const [error, setError] = useState("")
@@ -32,15 +33,26 @@ function Checkout() {
     const half = mm > 29
 
     const today = active === 0
+    const userdetails = useSelector(state => state.userdetails?.userdetails);
 
     useEffect(() => {
         if (!localStorage.getItem('gluserDetails')) {
-            // router.push("/login")
+            router.push("/login")
         }
         if (h > 17) {
             setActive(1)
         } else {
             setActive(0)
+        }
+
+        console.log(userdetails.address);
+
+        if (userdetails.address != null) {
+            // localStorage.setItem('pageMyaddress', 'myaddress');
+            // myaddress
+
+        } else {
+            router.push("/myaddress")
         }
     }, [])
 
@@ -59,6 +71,7 @@ function Checkout() {
             content.scrollLeft -= (width - 20);
             event.preventDefault();
         });
+
 
     })
     const timeslots = [
@@ -82,7 +95,7 @@ function Checkout() {
     ];
 
     return (<>
-        {!user && <Login show={!user} />}
+        {/* {!user && <Login show={!user} />} */}
 
         <div className="servicedesk-bg checkout-all" style={{ paddingBottom: '50px' }}>
             <div className="header-css-head">

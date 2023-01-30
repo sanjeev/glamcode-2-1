@@ -39,8 +39,14 @@ function MydModalWithGrid(props) {
 
                     if (res.status === 'success') {
 
-                        Router.push('/payment')
+
                         dispatch(userAddress(res.data));
+                        dispatch(userData(res.user));
+                        if (!localStorage.getItem('booking_time')) {
+                            Router.push("/checkout")
+                        } else {
+                            Router.push('/payment')
+                        }
                     } else {
                         toast.error(res.message, "error");
 
@@ -108,7 +114,7 @@ function Myaddress() {
     } = useForm();
     useEffect(() => {
         if (!localStorage.getItem('gluserDetails')) {
-            // router.push("/login")
+            router.push("/login")
         }
         frontService.addressList(userdetails?.id)
             .then(
@@ -199,9 +205,17 @@ function Myaddress() {
 
                     if (res.status === 'success') {
                         setAddresslist(res.address);
-                        toast.success(res.message, "Fashion Store");
+
                         dispatch(userAddress(res.setaddress));
-                        Router.push('/payment')
+                        dispatch(userData(res.user));
+                        if (!localStorage.getItem('booking_time')) {
+
+                            Router.push("/checkout")
+                        } else {
+                            Router.push('/payment')
+                        }
+
+                        toast.success(res.message, "Fashion Store");
                     } else {
                         toast.error(res.message, "error");
 
@@ -237,7 +251,7 @@ function Myaddress() {
             )
     }
     return (<>
-        {!user && <Login show={!user} />}
+        {/* {!user && <Login show={!user} />} */}
 
         <div className="servicedesk-bg address-all" style={{ paddingBottom: '50px' }}>
             <div className="header-css-head">
@@ -306,7 +320,7 @@ function Myaddress() {
                                     </div>
 
                                     <input type="hidden" className="form-control" name="id" defaultValue={userdetails?.id} {...register('id')} />
-                                    <button type="submit" className="btn btn-primary" style={{ background: '#7c00b7', border: '1px solid #7c00b7' }}>Edit Profile</button>
+                                    <button type="submit" className="btn btn-primary" style={{ background: '#7c00b7', border: '1px solid #7c00b7' }}>Save Profile</button>
                                 </form>
                             </div>
                         </div>

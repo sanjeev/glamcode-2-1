@@ -13,6 +13,7 @@ import twitter from '../../assets/img/twitter.svg'
 import youtube from '../../assets/img/youtube.svg'
 import moment from "moment";
 import { frontService } from "../../_services/front.services";
+import { Link } from "react-scroll";
 
 function Footer() {
     const router = useRouter()
@@ -20,7 +21,7 @@ function Footer() {
     const [total, setTotal] = React.useState(0);
     const [coupons, setCoupons] = useState([])
 
-
+    const dataloctions = useSelector(state => state.loctions);
     const renderInput = () => {
 
         router.push('/login');
@@ -125,8 +126,15 @@ function Footer() {
                     <div className="col-12">
                         <hr style={{ border: "1px solid rgb(255, 255, 255)" }} />
                     </div>
-                    <div className="col-12">
-                        <p className="footer-text">{localStorage.getItem("locAddress") ? localStorage.getItem("locAddress") : 'Amrapali Zodiac, Sector 120, Noida, Uttar Pradesh, India'}</p>
+                    <div className="row">
+                        <div className="col-md-7 col-lg-7">
+                            <p className="footer-text">{localStorage.getItem("locAddress") ? localStorage.getItem("locAddress") : 'Amrapali Zodiac, Sector 120, Noida, Uttar Pradesh, India'}</p>
+                        </div>
+                        <div className="col-md-5 col-lg-5" style={{ color: '#fff', textAlign: 'end' }}>
+                            {dataloctions.location?.map((x, i) =>
+                                <a style={{ color: '#fff' }} href={`/${x.slug}`}> {x.city}, </a>
+                            )}
+                        </div>
                     </div>
                 </div>
             </footer>
