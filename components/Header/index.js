@@ -74,7 +74,7 @@ function Header() {
                 <div className='headerclass background1 menufix'>
                     <Container fluid >
                         <Row >
-                            <Col lg="9" md="12">
+                            <Col lg="7" md="12">
                                 <div className='logsection'>
                                     <div className='log'>
                                         <a href='/'><Image src={Logo} alt="Glam code" width="50" height="50" /></a>
@@ -101,10 +101,13 @@ function Header() {
                                     </div>
                                 </div>
                             </Col>
-                            <Col lg="3" md="12" className='menutop'>
+                            <Col lg="5" md="12" className='menutop'>
                                 <div className="d-flex gap-2 justify-content-end">
                                     <a href='/' className="btn btn-outline-light bgsalon">Home</a>
                                     <a href='/blogs' className="btn btn-outline-light bgsalon">Blogs</a>
+
+                                    <a className="btn btn-outline-light bgsalon" href="https://play.google.com/store/apps/details?id=in.glamcode.app" target="_blank">
+                                        <span><i class="fa fa-download mr-2"></i>&nbsp;Use App</span></a>
                                     <button className="btn btn-outline-light bgsalon" onClick={onClick}>
                                         <i className="fa fa-bars  icon-m" aria-hidden="true" />
                                     </button>
