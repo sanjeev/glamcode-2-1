@@ -130,7 +130,7 @@ function Footer() {
                         <div className="col-md-7 col-lg-7">
                             <p className="footer-text">{localStorage.getItem("locAddress") ? localStorage.getItem("locAddress") : 'Amrapali Zodiac, Sector 120, Noida, Uttar Pradesh, India'}</p>
                         </div>
-                        <div className="col-md-5 col-lg-5" style={{ color: '#fff', textAlign: 'end' }}>
+                        <div className="col-md-5 col-lg-5 bv" style={{ color: '#fff', }}>
                             {dataloctions.location?.map((x, i) =>
                                 <a style={{ color: '#fff' }} href={`/${x.slug}`}> {x.city}, </a>
                             )}
