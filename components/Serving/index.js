@@ -3,8 +3,23 @@ import React from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 export default function Serving() {
+    const router = useRouter()
     const dataloctions = useSelector(state => state.loctions);
+    const selecthandleclick = (locId, locName, locAddress, locationslug, locMinBookingAmount) => {
+        localStorage.setItem("id", locId);
+        localStorage.setItem("cityname", locName);
+
+        localStorage.setItem("locAddress", locAddress);
+        localStorage.setItem("loc_min_booking_amount", locMinBookingAmount);
+
+
+        router.push('/' + locationslug);
+        window.location.href = '/' + locationslug;
+        //Router.reload(window.location.pathname)
+
+    }
     return (<>
         <Container fluid>
             <div className="section-title text-center">
@@ -19,8 +34,8 @@ export default function Serving() {
                         >
                             {dataloctions.location?.map((x, i) => {
                                 return (<div className="p-2" key={i}>
-                                    <Link className="salonehome-all-Category" href={"/" + x.slug}
-                                        onClick={() => localStorage.setItem("loc_min_booking_amount", x.price)}>
+                                    <Link className="salonehome-all-Category" href="#"
+                                        onClick={() => selecthandleclick(x.id, x.city, x.name, x.slug, x.price)}>
                                         <div
                                             className="salonehome-all-Category-box"
                                             style={{ backgroundColor: "rgb(255, 255, 255)" }}

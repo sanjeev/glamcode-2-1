@@ -107,7 +107,7 @@ function Header() {
                                     <a href='/blogs' className="btn btn-outline-light bgsalon">Blogs</a>
 
                                     <a className="btn btn-outline-light bgsalon" href="https://play.google.com/store/apps/details?id=in.glamcode.app" target="_blank">
-                                        <span><i class="fa fa-download mr-2"></i>&nbsp;Use App</span></a>
+                                        <span><i className="fa fa-download mr-2"></i>&nbsp;Use App</span></a>
                                     <button className="btn btn-outline-light bgsalon" onClick={onClick}>
                                         <i className="fa fa-bars  icon-m" aria-hidden="true" />
                                     </button>

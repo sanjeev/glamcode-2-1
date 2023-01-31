@@ -10,3 +10,10 @@ module.exports = {
         domains: ['www.glamcode.in'],
     },
 }
+
+module.exports = {
+    compiler: {
+        // ssr and displayName are configured by default
+        styledComponents: true,
+    },
+}

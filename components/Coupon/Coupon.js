@@ -100,7 +100,7 @@ export default function Coupon(props) {
             </div>
             <div className="row ">
                 {coupons.map((e, i) => {
-                    return <div className="col-lg-12 mt-xl-2" key={e.id}>
+                    return <div className="col-lg-12 mt-xl-2" key={i}>
                         <div className="row justify-content-between">
                             {/* <div className="col-lg-3 col-3 text-center">
                                 <img src="/paytm.png" alt="logo" className="logo" />

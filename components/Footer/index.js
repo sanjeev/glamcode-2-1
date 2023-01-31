@@ -56,6 +56,18 @@ function Footer() {
 
     }, []);
 
+
+    const selecthandleclick = (locId, locName, locAddress, locationslug, locMinBookingAmount) => {
+        localStorage.setItem("id", locId);
+        localStorage.setItem("cityname", locName);
+
+        localStorage.setItem("locAddress", locAddress);
+        localStorage.setItem("loc_min_booking_amount", locMinBookingAmount);
+        Router.push('/' + locationslug);
+        window.location.href = '/' + locationslug;
+        //Router.reload(window.location.pathname)
+
+    }
     const shortedCoupons = coupons.sort((a, b) => a.minimum_purchase_amount - b.minimum_purchase_amount)
 
     let dif = ((shortedCoupons[0] || {}).minimum_purchase_amount || 0) - total
@@ -132,7 +144,7 @@ function Footer() {
                         </div>
                         <div className="col-md-5 col-lg-5 bv" style={{ color: '#fff', }}>
                             {dataloctions.location?.map((x, i) =>
-                                <a style={{ color: '#fff' }} href={`/${x.slug}`}> {x.city}, </a>
+                                <a key={i} onClick={() => selecthandleclick(x.id, x.city, x.name, x.slug, x.price)} style={{ color: '#fff' }} href={`/${x.slug}`}> {x.city}, </a>
                             )}
                         </div>
                     </div>
