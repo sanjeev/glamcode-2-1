@@ -333,7 +333,7 @@ function Header() {
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="/about" className="side-menu-box">
+                                                <a href="/about-us" className="side-menu-box">
                                                     <span className="side-text">
                                                         <i className="fa fa-info-circle  icon-m" aria-hidden="true" />
                                                         About us
@@ -350,7 +350,7 @@ function Header() {
                                             </li>
                                             {localStorage.getItem('gluserDetails') ? <>
                                                 <li>
-                                                    <a href="/" className="side-menu-box">
+                                                    <a href="/mybookings" className="side-menu-box">
                                                         <span className="side-text">
                                                             <i className="fa fa-user  icon-m" aria-hidden="true" />
                                                             My Account
@@ -358,7 +358,7 @@ function Header() {
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="/" className="side-menu-box">
+                                                    <a href="/membership" className="side-menu-box">
                                                         <span className="side-text">
                                                             <i className="fa fa-star  icon-m" aria-hidden="true" />
                                                             Membership
@@ -366,7 +366,7 @@ function Header() {
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="/" className="side-menu-box">
+                                                    <a href="/refer-and-earn" className="side-menu-box">
                                                         <span className="side-text">
                                                             <i className="fa fa-share  icon-m" aria-hidden="true" />
                                                             Refer And Earn
@@ -374,7 +374,14 @@ function Header() {
                                                     </a>
                                                 </li></> : ""}
                                             {localStorage.getItem('gluserDetails') ? <li>
-                                                <div className="side-menu-box">
+                                                <div className="side-menu-box" onClick={() => {
+                                                    dispatch(userData(null));
+                                                    localStorage.removeItem("userDetails");
+                                                    localStorage.removeItem("userdata");
+                                                    localStorage.removeItem("page");
+                                                    localStorage.removeItem("gluserDetails");
+                                                    onClick()
+                                                }}>
                                                     <span className="side-text">
                                                         <i className="fa fa-sign-in  icon-m" aria-hidden="true" />
                                                         Logout
@@ -382,7 +389,7 @@ function Header() {
                                                 </div>
                                             </li> :
                                                 <li>
-                                                    <div className="side-menu-box">
+                                                    <div className="side-menu-box" onClick={() => { router.push("/login") }}>
                                                         <span className="side-text">
                                                             <i className="fa fa-sign-in  icon-m" aria-hidden="true" />
                                                             Login
