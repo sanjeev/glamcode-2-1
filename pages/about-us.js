@@ -7,7 +7,7 @@ export default function AboutUs() {
     const DATA = [
         { title: "Delhi", icon: "delhi.png" },
         { title: "Lucknow", icon: "lucknow.png" },
-        { title: "Noida", icon: "noida.png" },
+        { title: "Noida", icon: "Noida.png" },
         { title: "Gurgaon", icon: "gurgaon.png" },
         { title: "Ghaziabad", icon: "ghaziabad.png" },
     ]
