@@ -9,7 +9,7 @@ export default function AboutUs() {
         { title: "Lucknow", icon: "lucknow.png" },
         { title: "Noida", icon: "Noida.png" },
         { title: "Gurgaon", icon: "gurgaon.png" },
-        { title: "Ghaziabad", icon: "ghaziabad.png" },
+        { title: "Ghaziabad", icon: "Ghaziabad.png" },
     ]
 
     const TEAM = [{}, {}, {}, {},]
