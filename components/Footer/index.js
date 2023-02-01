@@ -156,7 +156,7 @@ function Footer() {
                         <ul className=" me-auto mb-2 mb-lg-0">
                             <li>
                                 <a
-                                    href="https://twitter.com/jaketrent"
+                                    href="https://twitter.com/GlamCode3?t=medt6YYBVczVXZ-IWiUObg&s=08"
                                     className="social-icon"
                                     style={{
                                         display: "inline-block",
@@ -334,7 +334,7 @@ function Footer() {
                     <ul className=" me-auto mb-2 mb-lg-0" style={{ display: 'flex', justifyContent: 'center', paddingLeft: "0px", marginTop: '10px' }}>
                         <li>
                             <a
-                                href="https://twitter.com/jaketrent"
+                                href="https://twitter.com/GlamCode3?t=medt6YYBVczVXZ-IWiUObg&s=08"
                                 className="social-icon"
                                 style={{
                                     display: "inline-block",

@@ -87,7 +87,7 @@ export default function ViewCenteredModal(props) {
                                     </div>
                                     <div className="product-details-cart-wishlist" style={{ marginLeft: '35px' }}>
                                         <button type="button" className="btn">
-                                            <i className="fa fa-clock-o" />
+                                            <i className="fa fa-clock-o" />&nbsp;
                                             {props.datato.time} {props.datato.time_type}
                                         </button>
                                     </div>
