@@ -66,7 +66,7 @@ const LoadingScreen = () => {
   return (
     <Screen>
       <Balls>
-        <img className="logoloaderimg" src={preloader.src} alt="Glamcode" width="150" />
+        <img className="logoloaderimg" src={preloader.src} alt="Glamcode" style={{ width: '100%' }} />
       </Balls>
     </Screen>
   );
