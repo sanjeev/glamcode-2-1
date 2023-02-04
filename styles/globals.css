@@ -1862,6 +1862,14 @@ button:disabled {
 }
 
 @media only screen and (min-width: 1px) and (max-width: 991px) {
+  .checkout-all .section-address {
+    width: 100%;
+    background: #fff;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    padding: 5px 5px 5px 6px;
+    height: 122px;
+  }
   .modal-fullscreen .modal-content {
     width: 94% !important;
     margin-left: auto;
