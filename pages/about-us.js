@@ -21,7 +21,7 @@ export default function AboutUs() {
                         <div className="icon-alignments">
                             <i className="fa fa-chevron-left fontSize-m-20" />
                         </div>
-                        <p className="inside-text-head">About Us</p>
+                        <h3 className="inside-text-head">About Us</h3>
                     </div>
                 </Container>
             </div>

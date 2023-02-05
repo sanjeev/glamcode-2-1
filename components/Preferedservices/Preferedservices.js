@@ -18,7 +18,7 @@ function Preferedservices({ data }) {
     return (<>
         <Container>
             <div className="title-content">
-                <h2 className="title font-familt-jost" style={{ width: '100%', textAlign: 'center', }}>Prefered Services</h2>
+                <h3 className="title font-familt-jost" style={{ width: '100%', textAlign: 'center', }}>Prefered Services</h3>
             </div>
             <Row className='card-container'>
                 {data?.map((x, i) => <Item x={x} i={i} key={i} mapItems={mapItems} />)}

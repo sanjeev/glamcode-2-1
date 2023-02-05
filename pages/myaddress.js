@@ -260,7 +260,7 @@ function Myaddress() {
                         <div className="icon-alignments">
                             <i className="fa fa-chevron-left fontSize-m-20" />
                         </div>
-                        <p className="inside-text-head">Select Address</p>
+                        <h3 className="inside-text-head">Select Address</h3>
                     </div>
                 </Container>
             </div>

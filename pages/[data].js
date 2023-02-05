@@ -73,7 +73,7 @@ export default function getRoute() {
                 {knowmore ? (
                     <>
                         <Head>
-                            <title>Glamcode Luxury Home Salon</title>
+                            <title>{knowmore.seo_title} </title>
                             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                             <meta name="title" content={knowmore.seo_title} data-react-helmet="true"></meta>
                             <meta name="description" content={knowmore.seo_desc} data-react-helmet="true"></meta>

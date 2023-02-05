@@ -15,7 +15,7 @@ export default function Home() {
     <div className='background2'>
       <>
         <Head>
-          <title>Glamcode Luxury Home Salon</title>
+          <title>Top Salon at Home |Salon Home Service| Home Salon services| Beauty Parlour Services at Home| near me| in Lucknow</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="title" content="Top Salon at Home |Salon Home Service| Home Salon services| Beauty Parlour Services at Home| near me| in Lucknow" data-react-helmet="true"></meta>
           <meta name="description" content="Bored of random Salon Visits? Book an appointment with GlamCode Luxury Salon at Home at an Affordable price. Offers Salon Home Service and provides professional Home Salon Services and is trending Beauty Parlor Services at Home in Lucknow. Offers Salon Services at Home,  Parlour services at Home, Beauty Services at Home, Salon at Home Services, Salon at Home in Lucknow, home salon in Lucknow, Beauty Parlour Services at Home, Beauty Services at Home in Lucknow, Home Salon near me, Hair Spa, facial and Waxing services, at home Manicure and pedicure Services, Body Massage near me in Lucknow." data-react-helmet="true"></meta>

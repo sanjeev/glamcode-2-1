@@ -50,7 +50,9 @@ export default function SearchItem() {
                             <div className="icon-alignments">
                                 <i className="fa fa-chevron-left fontSize-m-20" />
                             </div>
-                            <p className="inside-text-head" style={{ textTransform: "capitalize" }}>{query ? query.item : 'loging...'}</p>
+                            <h3 className="inside-text-head" style={{ textTransform: "capitalize" }}>
+                                {query ? query.item : 'loging...'}
+                            </h3>
                         </div>
                     </Container>
 

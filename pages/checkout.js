@@ -104,7 +104,7 @@ function Checkout() {
                         <div className="icon-alignments">
                             <i className="fa fa-chevron-left fontSize-m-20" />
                         </div>
-                        <p className="inside-text-head">Select Booking Slots</p>
+                        <h3 className="inside-text-head">Select Booking Slots</h3>
                     </div>
                 </Container>
             </div>

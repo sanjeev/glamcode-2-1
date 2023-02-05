@@ -72,7 +72,7 @@ export default function Categoryslug() {
     return (
         <>
             <Head>
-                <title>Glamcode Luxury Home Salon</title>
+                <title>{mainCategory.seo_title}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <meta name="title" content={mainCategory.seo_title} data-react-helmet="true"></meta>
                 <meta name="description" content={mainCategory.seo_desc} data-react-helmet="true"></meta>
@@ -96,7 +96,7 @@ export default function Categoryslug() {
                             <div className="icon-alignments">
                                 <i className="fa fa-chevron-left fontSize-m-20" />
                             </div>
-                            <p className="inside-text-head">{mainCategory ? mainCategory.name : 'loging...'}</p>
+                            <h3 className="inside-text-head">{mainCategory ? mainCategory.name : 'loging...'}</h3>
                         </div>
                     </Container>
                     {categories ? (<>

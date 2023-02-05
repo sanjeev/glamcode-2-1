@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
                         <div className="icon-alignments">
                             <i className="fa fa-chevron-left fontSize-m-20" />
                         </div>
-                        <p className="inside-text-head">Term & Conditions</p>
+                        <h3 className="inside-text-head">Term & Conditions</h3>
                     </div>
                 </Container>
             </div>

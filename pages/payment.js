@@ -191,7 +191,7 @@ function Payment() {
                         <div className="icon-alignments">
                             <i className="fa fa-chevron-left fontSize-m-20" />
                         </div>
-                        <p className="inside-text-head">Payment</p>
+                        <h3 className="inside-text-head">Payment</h3>
                     </div>
                 </Container>
             </div>

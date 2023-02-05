@@ -49,7 +49,7 @@ export default function Bookings() {
                         <div className="icon-alignments">
                             <i className="fa fa-chevron-left fontSize-m-20" />
                         </div>
-                        <p className="inside-text-head">Bookings</p>
+                        <h3 className="inside-text-head">Bookings</h3>
                     </div>
                 </Container>
             </div>

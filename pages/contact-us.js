@@ -103,7 +103,7 @@ export default function ContactUs() {
                         <div className="icon-alignments">
                             <i className="d-flex justify-content-center fa fa-chevron-left fontSize-m-20" />
                         </div>
-                        <p className="inside-text-head">Contact Us</p>
+                        <h3 className="inside-text-head">Contact Us</h3>
                     </div>
                 </Container>
             </div>
