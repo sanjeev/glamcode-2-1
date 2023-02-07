@@ -6,6 +6,7 @@
 
 module.exports = {
     reactStrictMode: true,
+    unoptimized: true,
     images: {
         domains: ['www.glamcode.in'],
     },

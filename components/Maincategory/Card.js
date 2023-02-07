@@ -18,7 +18,7 @@ export default function Card(props) {
                             <img src={`https://www.glamcode.in/user-uploads/maincategory/${props.image}`} alt={props.name} />
                         </div>
                     </div>
-                    <div className="salone-all-category-text">{props.name}</div>
+                    <div className="salone-all-category-text mt-2"><h2 className="salone-all-category-text">{props.name}</h2></div>
                 </div>
 
             </>) : (
@@ -29,7 +29,7 @@ export default function Card(props) {
                                 <img src={`https://www.glamcode.in/user-uploads/maincategory/${props.image}`} alt={props.name} />
                             </div>
                         </div>
-                        <div className="salone-all-category-text">{props.name}</div>
+                        <div className="salone-all-category-text mt-2"><h2 className="salone-all-category-text">{props.name}</h2></div>
                     </div >
                     <Modalpup show={modalShow} onHide={() => setModalShow(false)}
                         noRedirect={true}

@@ -51,7 +51,7 @@ export default function Serving() {
                                             </div>
                                         </div>
                                         <div className="salone-all-category-text">
-                                            <p>{x.city}</p>
+                                            <h5>{x.city}</h5>
                                         </div>
                                     </Link>
                                 </div>

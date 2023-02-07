@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Image from 'next/image'
 import Logo from "../../glamcode.png"
 import Dropdown from 'react-bootstrap/Dropdown';
 import Modalpup from '../Modal/loction';
@@ -77,7 +76,7 @@ function Header() {
                             <Col lg="7" md="12">
                                 <div className='logsection'>
                                     <div className='log'>
-                                        <a href='/'><Image src={Logo} alt="Glam code" width="50" height="50" /></a>
+                                        <a href='/'><img src={Logo.src} alt="Glam code" width="50" height="50" /></a>
                                     </div>
                                     <div className='selectloction'>
                                         <div>
@@ -292,7 +291,7 @@ function Header() {
                                 <div className="logo imagelogo-sidemenu " style={{ margin: 'auto', paddingTop: '23px' }}>
                                     <a href="/">
 
-                                        <Image className="img-fluid" src={Logo} alt="Glamcode" width="120" height="26" />
+                                        <img className="img-fluid" src={Logo} alt="Glamcode" width="120" height="26" />
                                     </a>
                                 </div>
                                 <button onClick={showSidebar} className="offcanvas-close  d-flex align-items-center justify-content-center" aria-label="offcanvas svg icon">

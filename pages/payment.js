@@ -136,7 +136,7 @@ function Payment() {
 
 
     const options = {
-        key: 'rzp_test_cspHH5os0wjcRW',
+        key: 'rzp_live_KBMHwbrgS5pC5c',
         amount: finalTotal * 100, //  = INR 1
         name: 'Glam code',
         description: '',
