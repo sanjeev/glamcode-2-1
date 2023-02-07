@@ -13,6 +13,7 @@ import persistor from "../store/store"
 import 'react-toastify/dist/ReactToastify.css';
 import Head from 'next/head'
 import { useEffect } from 'react'
+import { useRouter } from 'next/router';
 import { hotjar } from 'react-hotjar';
 function MyApp({ Component, pageProps }) {
     useEffect(() => {
@@ -33,7 +34,11 @@ function MyApp({ Component, pageProps }) {
             <Head>
                 <meta name="p:domain_verify" content="74b83f2fc1f6b702815166d707bdcaad" />
                 <meta name="google-site-verification" content="PoD0vRbbegsOcDDOZQHhcrbieW2ZPB616nsMmnWSKhA" />
-
+                <link
+                    rel="canonical"
+                    href={typeof window !== 'undefined' && `${window.location.origin}${useRouter().asPath}`}
+                    key="canonical"
+                />
             </Head>
             <React.Fragment>
                 <Provider store={store}>
