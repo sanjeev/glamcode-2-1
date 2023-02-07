@@ -62,6 +62,9 @@ export default function Categoryslug() {
             setVisible(position > moving);
             setPosition(moving)
         };
+
+
+
         window.addEventListener("scroll", handleScroll);
         return (() => {
             window.removeEventListener("scroll", handleScroll);
