@@ -271,7 +271,29 @@ button {
   color: #000;
   text-align: center;
 }
-
+.bookingiddata {
+  background: rgb(217, 190, 244);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 10px 10px 0px 0px;
+}
+.bok {
+  padding: 15px;
+}
+.bok p {
+  margin-bottom: 5px;
+}
+.bok .pll {
+  display: flex;
+  justify-content: space-between;
+}
+.bookingiddata2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid;
+}
 .salonehome-all-Category
   .salonehome-all-Category-box
   .salonehome-all-Category-images

@@ -309,7 +309,7 @@ async function myBookings(id) {
         body: JSON.stringify(data)
     };
 
-    return fetch(Global.BASE_API_PATH + `/bookingdata`, requestOptions)
+    return fetch(Global.BASE_API_PATH + `/bookingsdata`, requestOptions)
         .then(handleResponse)
         .then(res => {
             return res;

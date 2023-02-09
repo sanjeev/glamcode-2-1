@@ -27,8 +27,9 @@ export default function Bookings() {
         frontService.myBookings(user?.id)
             .then(res => {
                 if (res.status === 'success') {
-                    setItems(res.OngoingBookingsArr);
-                    setHistoryItems(res.HistoryBookingsArr);
+
+                    setItems(res.ongoingBookings);
+                    //setHistoryItems(res.HistoryBookingsArr);
                     setLoading(false)
                 } else {
                     console.log('Something went wrong !!');
@@ -40,6 +41,8 @@ export default function Bookings() {
             }
             )
     }
+
+
 
     return (<>
         <div className="servicedesk-bg checkout-all min-vh-100" id="myBookings" style={{ paddingBottom: '50px' }}>
@@ -55,15 +58,15 @@ export default function Bookings() {
             </div>
             {loading ? <LoadingScreen /> : <Container>
                 <div className='mt-4 pt-xl-5 pt-4  card-container'>
-                    <h4 className="font-12 fw-bold mb-xl-4 mb-2">Ongoing Bookings</h4>
+                    <h4 className="font-12 fw-bold mb-xl-4 mb-2">Bookings Orders</h4>
                     <div className='row'>
                         {items && items.length > 0 ?
-                            (items.map((e) => {
-                                return <Item e={e} key={e.booking_id} user={user} getBookings={getBookings} update={true} />
+                            (items.map((e, i) => {
+                                return <Item e={e} key={i} user={user} getBookings={getBookings} update={true} />
                             })) : <div className="mt-5 col-12">No Ongoing Booking</div>}
                     </div>
                 </div>
-                <div className='mt-4 pt-xl-5 pt-4 row card-container'>
+                {/* <div className='mt-4 pt-xl-5 pt-4 row card-container'>
                     <h4 className="font-12 fw-bold mb-xl-4 mb-2">History Bookings</h4>
                     <div className='row'>
                         {historyItems && historyItems.length > 0 ?
@@ -71,7 +74,7 @@ export default function Bookings() {
                                 return <Item e={e} key={e.booking_id} />
                             })) : <div className="mt-5 col-12">No History Booking</div>}
                     </div>
-                </div>
+                </div> */}
             </Container >}
         </div>
         <ToastContainer />
@@ -81,6 +84,7 @@ export default function Bookings() {
 
 
 const Item = ({ e, user, getBookings, update = false }) => {
+    console.log(e);
     const router = useRouter()
     const [sending, setSending] = useState(false)
     const [open, setOpen] = useState(false)
@@ -108,9 +112,9 @@ const Item = ({ e, user, getBookings, update = false }) => {
             )
     }
 
-    return <div className="col-lg-4 col-12 mb-xl-4 mb-3" key={e.booking_id}>
+    return <div className="col-lg-12 col-12 mb-xl-4 mb-3" key={e.booking_id} style={{ border: '1px solid', borderRadius: '10px', padding: '0px' }}>
         <ConfirmBooking sending={sending} show={open} onHide={() => setOpen(false)} cancelBooking={cancelBooking} item={e} />
-        <div className="servicesMD p-3   servicesMD-bg-color-1 d-flex justify-content-between  h-100 flex-column">
+        {/* <div className="servicesMD p-3   servicesMD-bg-color-1 d-flex justify-content-between  h-100 flex-column">
             <h5 className="text-center">{e.service_name}</h5>
             <div className="d-flex flex-row justify-content-between-flex">
                 <p className="booking-title">Booking Date</p>
@@ -142,6 +146,40 @@ const Item = ({ e, user, getBookings, update = false }) => {
                     </div>
                 </div>
             }
+        </div> */}
+        <div className="h3 pt-2 pb-3 mb-0 bookingiddata" >
+            <p style={{ marginBottom: '0px' }}>Order Id : GC-{e.id}</p>
+            <p style={{ marginBottom: '0px' }}>₹{" "}{e.amount_to_pay}/-</p>
+
         </div>
-    </div>
+        <div className="h6 pt-3 pb-3 mb-0 bookingiddata2" >
+            <p style={{ marginBottom: '0px' }}>Order Date: : {moment(e.created_at).format('MMM Do YY')}</p>
+            <p style={{ marginBottom: '0px' }}>Order Status: {e.status}</p>
+
+
+        </div>
+
+        <div className="bok">
+            <div className="pll">
+                <p>Booking Date : {moment(e.date_time).format('MMM Do YY')}</p>
+                <p>Booking Time : {moment(e.date_time).format('h:mm a')}</p>
+            </div>
+            <div className="pll">
+                <p>Payment Mode : {e.payment_status}</p>
+
+            </div>
+            <div>
+
+                <div className="mt-2">
+                    {e.status === "pending" && <>
+                        <button style={{ background: "rgb(124, 0, 183)", border: "1px solid rgb(124, 0, 183)", marginRight: '10px' }} className="btn btn-danger" onClick={() => setOpen(true)} >Cancel Order</button>
+
+                        <button style={{ background: "rgb(124, 0, 183)", border: "1px solid rgb(124, 0, 183)", marginRight: '10px' }} className="btn btn-primary" onClick={() => router.push(`/reschedule/${e.id}`)}>Reschedule</button>
+                    </>}
+                    <button style={{ background: "rgb(124, 0, 183)", border: "1px solid rgb(124, 0, 183)", marginRight: '10px' }} className="btn btn-primary">View Details</button>
+                </div>
+
+            </div>
+        </div>
+    </div >
 }

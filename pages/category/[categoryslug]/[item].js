@@ -22,6 +22,7 @@ export default function Categoryslug() {
     const datacat = useSelector(state => state.maincat);
 
     useEffect(() => {
+
         frontService.datamancat()
             .then(
                 res => {
@@ -92,6 +93,7 @@ export default function Categoryslug() {
                 <meta name="geo.position" content="28.5839021,77.3959942" data-react-helmet="true"></meta>
                 <meta name="ICBM" content="28.5839021,77.3959942" data-react-helmet="true"></meta>
             </Head>
+
             <div className="servicedesk-bg" style={{ paddingBottom: '50px' }}>
                 <div className="header-css-head">
                     <Container fluid >
