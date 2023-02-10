@@ -3,7 +3,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
     "export": "next build && next export",
     "start": "next start"
   },
