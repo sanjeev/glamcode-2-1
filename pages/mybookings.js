@@ -154,18 +154,18 @@ const Item = ({ e, user, getBookings, update = false }) => {
         </div>
         <div className="h6 pt-3 pb-3 mb-0 bookingiddata2" >
             <p style={{ marginBottom: '0px' }}>Order Date: : {moment(e.created_at).format('MMM Do YY')}</p>
-            <p style={{ marginBottom: '0px' }}>Order Status: {e.status}</p>
+            <p className="textPletter" style={{ marginBottom: '0px' }}>Order Status: {e.status}</p>
 
 
         </div>
 
         <div className="bok">
             <div className="pll">
-                <p>Booking Date : {moment(e.date_time).format('MMM Do YY')}</p>
-                <p>Booking Time : {moment(e.date_time).format('h:mm a')}</p>
+                <p >Booking Date : {moment(e.date_time).format('MMM Do YY')}</p>
+                <p >Booking Time : {moment(e.date_time).format('h:mm a')}</p>
             </div>
             <div className="pll">
-                <p>Payment Mode : {e.payment_status}</p>
+                <p className="textPletter">Payment Mode : {e.payment_status}</p>
 
             </div>
             <div>
