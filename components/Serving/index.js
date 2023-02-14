@@ -41,7 +41,7 @@ export default function Serving() {
                                         >
                                             <div className="salonehome-all-Category-images">
                                                 <img
-                                                    src={`https://www.glamcode.in/user-uploads/locations/${x.image}`}
+                                                    src={`https://admin.glamcode.in/user-uploads/locations/${x.image}`}
                                                     alt={x.city}
                                                     style={{ marginTop: 10 }}
                                                     width={100}

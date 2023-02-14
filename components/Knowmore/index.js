@@ -11,7 +11,7 @@ export default function Knowmore() {
                 res => {
 
                     if (res.status === 'success') {
-                        setKnowmore(res.knowdata[0].content);
+                        setKnowmore(res.knowdata[0]);
 
                     } else {
                         console.log('Something went wrong !!');
@@ -33,7 +33,7 @@ export default function Knowmore() {
                 </h2>
             </div>
             {knowmore ? (<>
-                <div className="removeknowmore" key={0} dangerouslySetInnerHTML={{ __html: knowmore }} style={{ padding: 30, fontFamily: 'Alata', fontStyle: 'normals', fontSize: 16, textAlign: 'center', }} />
+                <div className="removeknowmore" key={0} dangerouslySetInnerHTML={{ __html: knowmore.content }} style={{ padding: 30, fontFamily: 'Alata', fontStyle: 'normals', fontSize: 16, textAlign: 'center', }} />
             </>) : <LoadingScreen />}
 
 

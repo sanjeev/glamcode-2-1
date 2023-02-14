@@ -5,7 +5,7 @@ export default function ViewDetails(props) {
     const [modalShow, setModalShow] = React.useState(false);
     return (
         <>
-            <div className="viewDetails" onClick={() => setModalShow(true)}>View Details</div>
+            <div className={`viewDetails ${props.devise}`} onClick={() => setModalShow(true)}>View Details</div>
 
             <ViewCenteredModal
                 show={modalShow}

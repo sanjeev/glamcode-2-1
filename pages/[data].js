@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router';
 import Head from 'next/head'
 import { frontService } from "../_services/front.services";
@@ -24,12 +24,7 @@ export default function getRoute() {
             .then(
                 res => {
                     if (res.status === 'success') {
-                        if (!res.knowdataslug[0]) {
-                            router.push("/404")
-                        } else {
-                            setKnowmore(res.knowdataslug[0]);
-                        }
-                        // console.log(res.knowdataslug[0]);
+                        setKnowmore(res.knowdataslug[0]);
                     } else {
                         console.log('Something went wrong !!');
                         //toast.error(res.errors[0], "Fashion Store");
@@ -41,11 +36,17 @@ export default function getRoute() {
                 }
             )
 
-        frontService.preferredPack(localStorage.getItem("id"))
+
+        frontService.loctionSlug(slug)
             .then(
                 res => {
                     if (res.status === 'success') {
-                        setItems(res.preferredPack);
+
+                        localStorage.setItem("id", res.loction[0].location_id);
+                        localStorage.setItem("cityname", res.loction[0].city);
+                        localStorage.setItem("locAddress", res.loction[0].name);
+                        localStorage.setItem("loc_min_booking_amount", res.loction[0].price);
+
                     } else {
                         console.log('Something went wrong !!');
                     }
@@ -55,19 +56,40 @@ export default function getRoute() {
                 }
             )
 
-    }, [slug]);
 
+
+    }, [slug]);
+    React.useEffect(() => {
+        setTimeout(function () {
+            frontService.preferredPack(localStorage.getItem("id"))
+                .then(
+                    res => {
+                        if (res.status === 'success') {
+                            setItems(res.preferredPack);
+                        } else {
+                            console.log('Something went wrong !!');
+                        }
+                    },
+                    error => {
+                        console.log('Something went wrong !!');
+                    }
+                )
+        }, 500);
+
+    }, [])
     return (
 
 
         <>
 
             <div className='background2'>
-                {/* <div>
-                    <h1>Sanjeev</h1>
-                    <h2>pathname:- {router.pathname}</h2>
-                    <h2>asPath:- {router.asPath}</h2>
-                </div> */}
+                <div>
+
+                    <h2>
+                        asPath:- {slug}
+                        {history?.location?.pathname.split('/')[1]}
+                    </h2>
+                </div>
 
 
                 {knowmore ? (

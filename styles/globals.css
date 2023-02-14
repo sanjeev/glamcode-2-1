@@ -840,6 +840,14 @@ a:hover {
   border: 1px solid #fff !important;
 }
 
+.removeknowmore {
+  background-color: white;
+}
+
+.know-more-wrapper {
+  height: 463px;
+  overflow: auto;
+}
 .removeknowmore p {
   background-color: transparent !important;
   text-align: justify;
@@ -1157,11 +1165,20 @@ a:hover {
   background: #fff1f1;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
-
+.viewDetails.M {
+  margin-top: 25px !important;
+}
+.servicesMD .image2 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  border-radius: 6px;
+}
 .servicesMD .viewDetails {
   position: relative;
   width: 35%;
-  margin-left: auto;
+
   margin-top: 45px;
   padding: 4px 13px;
   bottom: 6%;
@@ -1226,7 +1243,6 @@ a:hover {
 .servicesMD .image {
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
   border: 1px solid #000;
   border-radius: 6px;
 }
@@ -1428,10 +1444,10 @@ a:hover {
 }
 
 .servicesMD .lineDiv {
-  width: 98%;
+  width: 100%;
   height: 0;
-  background-color: #585656;
-  border: 1px solid #585656;
+  background-color: #58565640;
+  border: 1px solid #58565647;
 }
 
 .checkout-all .section-selectBooking::-webkit-scrollbar {
@@ -2082,9 +2098,10 @@ button:disabled {
   }
 
   .servicesMD .lineDiv {
-    width: 98%;
+    width: 100%;
     height: 0;
-    border: 1px solid #585656;
+    background-color: #58565640;
+    border: 1px solid #58565647;
   }
 
   #cart-btn .Addtocart,
@@ -2181,4 +2198,159 @@ button:disabled {
   .container {
     max-width: 1365px;
   }
+}
+
+/* preferred packages  */
+.extra-small-text {
+  font-size: 11px !important;
+}
+
+.save-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: #559935;
+  background-color: #e7ffde;
+  padding: 8px;
+}
+
+.package-btn {
+  background-color: #a854fc !important;
+  color: white !important;
+}
+
+.package-item {
+  float: left;
+  width: initial !important;
+  margin: 15px;
+  border-radius: 6px;
+  /* background: #D9BEF4; */
+  text-align: center;
+  padding-top: 1px;
+}
+
+.package-info {
+  /* padding: 10px; */
+  border-radius: 6px;
+  background: #fff;
+  margin: 12px 12px 0;
+  margin-bottom: -20px;
+  position: relative;
+  background: #d9bef4;
+}
+
+.preferred-packages .slick-prev {
+  left: -68px !important;
+  width: 55px !important;
+  height: 55px !important;
+  border-radius: 100%;
+  background-color: white !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.preferred-packages .slick-next {
+  right: -68px !important;
+  width: 55px !important;
+  height: 55px !important;
+  border-radius: 100%;
+  background-color: white !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 1px) and (max-width: 667px) {
+  .package-item {
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: row-reverse !important;
+  }
+
+  .package-info {
+    margin: 0px 12px 0;
+    margin-left: -56px;
+    margin-right: 0px;
+  }
+
+  .mobile-product-info-wrapper {
+    background: #d9bef4 !important;
+    padding: 11px 11px 11px 0px !important;
+    width: 75% !important;
+  }
+
+  .package-btn {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+
+  .preferred-packages .slick-prev {
+    left: -2% !important;
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .preferred-packages .slick-next {
+    right: -2% !important;
+    width: 35px !important;
+    height: 35px !important;
+  }
+  .refer-earn .slick-slide {
+    width: 236px !important;
+    margin-right: 8px;
+  }
+  .refer-earn-img {
+    padding-right: 0px !important;
+  }
+}
+
+.refer-earn {
+  margin-top: 48px;
+}
+
+.refer-earn-img {
+  height: 160px !important;
+  width: 100%;
+  padding-right: 12px;
+  background-color: transparent !important;
+}
+
+.refer-earn .slick-prev {
+  left: -1% !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 100%;
+  background-color: white !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.refer-earn .slick-next {
+  right: 0% !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 100%;
+  background-color: white !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.know-more-wrapper::-webkit-scrollbar {
+  width: 32px;
+  padding: 2px;
+}
+
+/* Track */
+.know-more-wrapper::-webkit-scrollbar-track {
+  background-color: #d9bef4;
+}
+
+/* Handle */
+.know-more-wrapper::-webkit-scrollbar-thumb {
+  background: #a854fc;
+  border-radius: 4px;
 }

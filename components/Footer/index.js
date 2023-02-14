@@ -60,10 +60,9 @@ function Footer() {
     const selecthandleclick = (locId, locName, locAddress, locationslug, locMinBookingAmount) => {
         localStorage.setItem("id", locId);
         localStorage.setItem("cityname", locName);
-
         localStorage.setItem("locAddress", locAddress);
         localStorage.setItem("loc_min_booking_amount", locMinBookingAmount);
-        Router.push('/' + locationslug);
+        router.push('/' + locationslug);
         window.location.href = '/' + locationslug;
         //Router.reload(window.location.pathname)
 

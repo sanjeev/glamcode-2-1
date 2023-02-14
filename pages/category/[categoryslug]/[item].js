@@ -191,34 +191,79 @@ export default function Categoryslug() {
                                                 <div className="col-md-6 col-12 p-md-5 pt-md-3 pb-md-0 p-2" key={i}
                                                 >
                                                     <div className="servicesMD row servicesMD-bg-color-1">
-                                                        <a className="col-4 p-0" href="#">
-                                                            <img
-                                                                className="image"
-                                                                src={y.service_image_url}
-                                                                alt={y.name}
-                                                            />
-                                                        </a>
-                                                        <div className="col-8 pt-1 position-relative">
-                                                            <div className="title">
-                                                                <a href="#">{y.name}</a>
-                                                            </div>
-                                                            <div className="d-flex flex-row align-items-center" style={{ margin: "4% 0.625rem -2% 0%" }}>
-                                                                <div className="p-rl-2 Price">₹ {Math.round(y.price)}</div>
-                                                                <div className="p-rl-2 offerPrice">₹ {Math.round(y.discounted_price)}</div>
-                                                                <div className="p-rl-2 discountTitle">{y.discount}%</div>
-                                                            </div>
-                                                            <div
-                                                                className="d-flex flex-row"
-                                                                style={{ margin: "0.625rem 0.625rem 1%" }}
-                                                            >
-                                                                <div className="p-2 time-settings">
-                                                                    <i className="fa fa-clock-o" />
-                                                                    {y.time} {y.time_type}
+                                                        {localStorage.getItem('devise') === 'D' ? (<>
+                                                            <a className="col-4 p-0" href="#">
+                                                                <img
+                                                                    className="image2"
+                                                                    src={y.service_image_url}
+                                                                    alt={y.name}
+                                                                />
+                                                            </a>
+                                                            <div className="col-8 pt-1 position-relative">
+                                                                <div className="title">
+                                                                    <a href="#">{y.name}</a>
                                                                 </div>
+                                                                <div className="d-flex flex-row align-items-center" style={{ margin: "4% 0.625rem -2% 0%" }}>
+                                                                    <div className="p-rl-2 Price">₹ {Math.round(y.price)}</div>
+                                                                    <div className="p-rl-2 offerPrice">₹ {Math.round(y.discounted_price)}</div>
+                                                                    <div className="p-rl-2 discountTitle">{y.discount}%</div>
+                                                                </div>
+                                                                <div
+                                                                    className="d-flex flex-row"
+                                                                    style={{ margin: "0.625rem 0.625rem 1%" }}
+                                                                >
+                                                                    <div className="time-settings">
+                                                                        <i className="fa fa-clock-o" />
+                                                                        {y.time} {y.time_type}
+                                                                    </div>
+                                                                </div>
+                                                                <AddToCart data={y} />
+                                                                <div className="lineDiv" />
+                                                                <div className="descriptionServices">
+                                                                    <ul className="p-2" style={{ marginBottom: "-25px" }}>
+                                                                        {mapItems(y.description.replace(/(<([^>]+)>)/ig, '').replace(/(?:\r\n|\r|\n)/g, '').replace(/(?:&nbsp;)/g, '')
+                                                                            .replace(/&amp;/g, '&').toString().split('.'))}
+                                                                    </ul>
+                                                                </div>
+                                                                <ViewDetails
+                                                                    alldata={y}
+                                                                    devise={localStorage.getItem('devise')}
+                                                                />
+
                                                             </div>
-                                                            <AddToCart data={y} />
+
+                                                        </>) : (<>
+                                                            <a className="col-4 p-0" href="#">
+                                                                <img
+                                                                    className="image"
+                                                                    src={y.service_image_url}
+                                                                    alt={y.name}
+                                                                />
+                                                            </a>
+                                                            <div className="col-8 pt-1 position-relative">
+                                                                <div className="title">
+                                                                    <a href="#">{y.name}</a>
+                                                                </div>
+                                                                <div className="d-flex flex-row align-items-center" style={{ margin: "4% 0.625rem -2% 0%" }}>
+                                                                    <div className="Price">₹ {Math.round(y.price)}</div>
+                                                                    <div className="p-rl-2 offerPrice">₹ {Math.round(y.discounted_price)}</div>
+                                                                    <div className="p-rl-2 discountTitle">{y.discount}%</div>
+                                                                </div>
+                                                                <div
+                                                                    className="d-flex flex-row"
+                                                                    style={{ margin: "0.625rem 0.625rem 1%" }}
+                                                                >
+                                                                    <div className="time-settings">
+                                                                        <i className="fa fa-clock-o" />
+                                                                        {y.time} {y.time_type}
+                                                                    </div>
+                                                                </div>
+                                                                <AddToCart data={y} />
+
+
+                                                            </div>
                                                             <div className="lineDiv" />
-                                                            <div className="descriptionServices">
+                                                            <div className="descriptionServices" >
                                                                 <ul className="p-2" style={{ marginBottom: "-25px" }}>
                                                                     {mapItems(y.description.replace(/(<([^>]+)>)/ig, '').replace(/(?:\r\n|\r|\n)/g, '').replace(/(?:&nbsp;)/g, '')
                                                                         .replace(/&amp;/g, '&').toString().split('.'))}
@@ -226,9 +271,11 @@ export default function Categoryslug() {
                                                             </div>
                                                             <ViewDetails
                                                                 alldata={y}
-                                                            />
+                                                                devise={localStorage.getItem('devise')}
 
-                                                        </div>
+                                                            />
+                                                        </>)
+                                                        }
                                                     </div>
                                                 </div>
 
@@ -263,7 +310,7 @@ export default function Categoryslug() {
                                                         href={`/category/${item.slug}/${localStorage.getItem('cityname').toLowerCase()}`}
                                                         style={{ color: '#000' }}
                                                     >
-                                                        <img className="images-m center-img-all" src={`https://www.glamcode.in/user-uploads/maincategory/${item.image}`} alt={item.name} />
+                                                        <img className="images-m center-img-all" src={`https://admin.glamcode.in/user-uploads/maincategory/${item.image}`} alt={item.name} />
                                                         <div className="center-content-all">
                                                             <span
                                                                 style={{ fontSize: 13 }}

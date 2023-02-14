@@ -19,7 +19,7 @@ export default function AddToCart({ data }) {
     }
 
     return (<>
-        <div className="text-end pb-2">
+        <div className="pb-2">
             {inCart.length > 0 ? <div className="mt-0 Addtocart-Items-m Addtocart d-inline-flex gap-xl-3 gap-1">
                 <div className="addcart-minus" onClick={() => onDecrement(data.id)}>-</div>
                 <div className="addcart-count">{inCart[0].qty}</div>

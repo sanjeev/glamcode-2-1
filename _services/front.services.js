@@ -23,7 +23,8 @@ export const frontService = {
     myBookings,
     cancelBooking,
     preferredPack,
-    contact
+    contact,
+    loctionSlug
 };
 async function search(s, location) {
     const requestOptions = {
@@ -255,6 +256,19 @@ async function knowDataSlug(slug) {
             return res;
         });
 }
+
+async function loctionSlug(slug) {
+    const requestOptions = {
+        method: 'GET',
+    };
+    return fetch(Global.BASE_API_PATH + `/loctionSlug/${slug}`, requestOptions)
+        .then(handleResponse)
+        .then(res => {
+            return res;
+        });
+}
+
+
 
 async function allfaqs() {
     const requestOptions = {

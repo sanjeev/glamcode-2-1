@@ -235,7 +235,7 @@ export default function Login() {
                 <div className="headsecftion">
                     <img
                         className="imagelogo"
-                        src="https://www.glamcode.in/img/fav.png"
+                        src="https://admin.glamcode.in/img/fav.png"
                         alt="Glamcode"
                     />
                 </div>
