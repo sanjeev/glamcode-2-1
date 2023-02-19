@@ -2,15 +2,34 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router';
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 import { frontService } from "../_services/front.services";
-import LoadingScreen from "../components/LoadingScreen/loadingScreen"
-import Maincategory from "../components/Maincategory/maincategory"
-import Faqs from "../components/Faqs/index"
-import Serving from "../components/Serving"
-import Knowmore from "../components/Knowmore"
-import Pageslider from "../components/Slider/pageSlider"
-import Preferedservices from "../components/Preferedservices/Preferedservices"
-import Maincategorymobile from "../components/Maincategory/Maincategorymobile"
+
+const LoadingScreen = dynamic(() => import('../components/LoadingScreen/loadingScreen'));
+//import LoadingScreen from "../components/LoadingScreen/loadingScreen"
+
+const Maincategory = dynamic(() => import('../components/Maincategory/maincategory'));
+
+//import Maincategory from "../components/Maincategory/maincategory"
+
+const Faqs = dynamic(() => import('../components/Faqs/index'));
+
+//import Faqs from "../components/Faqs/index"
+const Serving = dynamic(() => import('../components/Serving'));
+//import Serving from "../components/Serving"
+
+const Knowmore = dynamic(() => import('../components/Knowmore'));
+//import Knowmore from "../components/Knowmore"
+const Pageslider = dynamic(() => import('../components/Slider/pageSlider'));
+
+//import Pageslider from "../components/Slider/pageSlider"
+const Preferedservices = dynamic(() => import('../components/Preferedservices/Preferedservices'));
+//import Preferedservices from "../components/Preferedservices/Preferedservices"
+const Maincategorymobile = dynamic(() => import('../components/Maincategory/Maincategorymobile'));
+
+//import Maincategorymobile from "../components/Maincategory/Maincategorymobile"
+
+
 import Header from "../components/Header/index"
 export default function getRoute() {
     // Calling useRouter() hook
@@ -42,10 +61,10 @@ export default function getRoute() {
                 res => {
                     if (res.status === 'success') {
 
-                        localStorage.setItem("id", res.loction[0].location_id);
-                        localStorage.setItem("cityname", res.loction[0].city);
-                        localStorage.setItem("locAddress", res.loction[0].name);
-                        localStorage.setItem("loc_min_booking_amount", res.loction[0].price);
+                        localStorage.setItem("id", res?.loction[0]?.location_id);
+                        localStorage.setItem("cityname", res?.loction[0]?.city);
+                        localStorage.setItem("locAddress", res?.loction[0]?.name);
+                        localStorage.setItem("loc_min_booking_amount", res?.loction[0]?.price);
 
                     } else {
                         console.log('Something went wrong !!');
@@ -74,7 +93,7 @@ export default function getRoute() {
                         console.log('Something went wrong !!');
                     }
                 )
-        }, 500);
+        }, 100);
 
     }, [])
     return (
@@ -83,13 +102,13 @@ export default function getRoute() {
         <>
 
             <div className='background2'>
-                <div>
+                {/* <div>
 
                     <h2>
                         asPath:- {slug}
                         {history?.location?.pathname.split('/')[1]}
                     </h2>
-                </div>
+                </div> */}
 
 
                 {knowmore ? (
@@ -160,9 +179,5 @@ export default function getRoute() {
                 ) : <LoadingScreen />}
             </div>
         </>
-
-
-
-
     )
 }

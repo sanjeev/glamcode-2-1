@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import Card from "./Card";
-export default function Maincategory() {
+export default function Maincategorymobile() {
     const [showCategory, setShowcategory] = React.useState([]);
     const datacat = useSelector(state => state.maincat);
 

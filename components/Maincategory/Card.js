@@ -1,6 +1,10 @@
 import React from "react";
 import Modalpup from '../Modal/loction';
 import { useRouter } from 'next/router'
+import Image from 'next/image';
+const prismicLoader = ({ src, width, quality }) => {
+    return `${src}?w=${width}&q=${quality || 75}`
+}
 export default function Card(props) {
     const router = useRouter()
     const [modalShow, setModalShow] = React.useState(false);
@@ -15,7 +19,15 @@ export default function Card(props) {
                 <div className={props.cname} onClick={() => callurl(props.slug, props.id)} >
                     <div className="salonehome-all-Category-box" style={{ backgroundColor: 'rgb(255, 255, 255)' }}>
                         <div className="salonehome-all-Category-images">
-                            <img src={`https://admin.glamcode.in/user-uploads/maincategory/${props.image}`} alt={props.name} />
+                            <Image
+                                loader={prismicLoader}
+                                src={`https://admin.glamcode.in/user-uploads/maincategory/${props.image}`}
+
+                                alt={props.name}
+                                width={100}
+                                height={100}
+                            />
+                            {/* <img src={`https://admin.glamcode.in/user-uploads/maincategory/${props.image}`}  /> */}
                         </div>
                     </div>
                     <div className="salone-all-category-text mt-2"><h2 className="salone-all-category-text">{props.name}</h2></div>
@@ -26,7 +38,15 @@ export default function Card(props) {
                     <div className={props.cname} onClick={() => setModalShow(true)}>
                         <div className="salonehome-all-Category-box" style={{ backgroundColor: 'rgb(255, 255, 255)' }}>
                             <div className="salonehome-all-Category-images">
-                                <img src={`https://admin.glamcode.in/user-uploads/maincategory/${props.image}`} alt={props.name} />
+                                <Image
+                                    loader={prismicLoader}
+                                    src={`https://admin.glamcode.in/user-uploads/maincategory/${props.image}`}
+
+                                    alt={props.name}
+                                    width={100}
+                                    height={100}
+                                />
+                                {/* <img src={`https://admin.glamcode.in/user-uploads/maincategory/${props.image}`} alt={props.name} /> */}
                             </div>
                         </div>
                         <div className="salone-all-category-text mt-2"><h2 className="salone-all-category-text">{props.name}</h2></div>

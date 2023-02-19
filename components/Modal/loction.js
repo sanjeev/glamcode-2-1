@@ -23,7 +23,7 @@ function Modalpup(props) {
         } else {
             Router.push('/' + locationslug);
             props.onHide();
-            //window.location.href = '/' + locationslug;
+            window.location.href = '/' + locationslug;
             //Router.reload(window.location.pathname)
         }
     }

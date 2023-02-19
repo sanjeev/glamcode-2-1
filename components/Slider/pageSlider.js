@@ -5,6 +5,7 @@ import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useSelector } from 'react-redux';
+import Image from 'next/image'
 function Pageslider() {
     const [showResults, setShowResults] = React.useState([]);
     const dataslide = useSelector(state => state.slide);

@@ -1,14 +1,20 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 import glame from '../../assets/img/glam.png'
-
+import Image from 'next/image';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useSelector } from 'react-redux';
+const prismicLoader = ({ src, width, quality }) => {
+    return `${src}?w=${width}&q=${quality || 75}`
+}
+
 function Slider() {
     const [showResults, setShowResults] = React.useState([]);
     const dataslide = useSelector(state => state.slide);
+
+
     return (
         <>
             <div className='mid-2 d-flex mt-4'>
@@ -37,10 +43,20 @@ function Slider() {
                                             return (
                                                 <SwiperSlide key={index}>
                                                     <div className='slideimage'>
-                                                        <img src={item.slider_image_base_url} alt="loading" style={{
+                                                        {/* <img src={item.slider_image_base_url} alt="loading" style={{
                                                             borderRadius: "10px",
                                                             width: 750,
-                                                        }} />
+                                                        }} /> */}
+                                                        <Image
+                                                            loader={prismicLoader}
+                                                            src={item.slider_image_base_url}
+                                                            style={{
+                                                                borderRadius: "10px",
+                                                            }}
+                                                            alt="loading"
+                                                            width={750}
+                                                            height={750}
+                                                        />
                                                     </div>
                                                 </SwiperSlide>
                                             );
@@ -75,10 +91,21 @@ function Slider() {
                                             return (
                                                 <SwiperSlide key={index}>
                                                     <div className='slideimage'>
-                                                        <img src={item.slider_image_base_url} alt="loading" style={{
+                                                        {/* <img src={item.slider_image_base_url} alt="loading" style={{
                                                             borderRadius: "10px",
 
-                                                        }} />
+                                                        }} /> */}
+                                                        <Image
+                                                            src={item.slider_image_base_url}
+                                                            alt="loading"
+                                                            style={{
+                                                                borderRadius: "10px",
+
+                                                            }}
+                                                            loader={prismicLoader}
+                                                            width={750}
+                                                            height={750}
+                                                        />
                                                     </div>
                                                 </SwiperSlide>
                                             );

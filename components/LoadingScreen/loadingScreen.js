@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import Image from 'next/image'
 import preloader from "../../assets/img/glamcodepreloader.gif"
 const Screen = styled.div`
   position: relative;
@@ -66,7 +67,10 @@ const LoadingScreen = () => {
   return (
     <Screen>
       <Balls>
-        <img className="logoloaderimg" src={preloader.src} alt="Glamcode" />
+        <Image className="logoloaderimg" width={500}
+          height={500} src={preloader.src} alt="Glamcode"
+
+        />
       </Balls>
     </Screen>
   );

@@ -1,15 +1,22 @@
 import React, { useState } from 'react'
+import dynamic from 'next/dynamic'
 import { Container, Row, Col } from 'react-bootstrap';
 import { useRouter } from 'next/router'
 import { useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { useSelector } from 'react-redux';
-import LoadingScreen from "../../../components/LoadingScreen/loadingScreen";
+
+const LoadingScreen = dynamic(() => import('../../../components/LoadingScreen/loadingScreen'));
+//import LoadingScreen from "../../../components/LoadingScreen/loadingScreen";
 import { frontService } from "../../../_services/front.services";
 import { Audio } from 'react-loader-spinner'
 import Head from 'next/head'
-import ViewDetails from '../../../components/ViewDetails/ViewDetails'
-import AddToCart from '../../../components/Cart/AddToCart';
+
+const ViewDetails = dynamic(() => import('../../../components/ViewDetails/ViewDetails'));
+//import ViewDetails from '../../../components/ViewDetails/ViewDetails'
+const AddToCart = dynamic(() => import('../../../components/Cart/AddToCart'));
+
+//import AddToCart from '../../../components/Cart/AddToCart';
 import { Link } from 'react-scroll';
 
 export default function Categoryslug() {

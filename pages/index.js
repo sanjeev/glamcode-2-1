@@ -1,10 +1,40 @@
 import React from "react"
+import dynamic from 'next/dynamic'
+//const Slider = dynamic(() => import('../components/Slider/homeSlider'));
 import Slider from "../components/Slider/homeSlider"
+
+const DynamicInnerComp = dynamic(() => import('../components/Slider/homeSlider'), {
+  ssr: false,
+  loading: () => <Slider />
+});
+
 import Maincategory from "../components/Maincategory/maincategory"
+const DynamicInnerComp2 = dynamic(() => import('../components/Maincategory/maincategory'), {
+  ssr: false,
+  loading: () => <Maincategory />
+});
+
 import Maincategorymobile from "../components/Maincategory/Maincategorymobile"
-import Faqs from "../components/Faqs/index"
-import Serving from "../components/Serving"
-import Knowmore from "../components/Knowmore"
+
+const DynamicInnerCompmobile = dynamic(() => import('../components/Maincategory/Maincategorymobile'), {
+  ssr: false,
+  loading: () => <Maincategorymobile />
+});
+
+
+//const Maincategorymobile = dynamic(() => import('../components/Maincategory/Maincategorymobile'));
+
+
+const Faqs = dynamic(() => import('../components/Faqs/index'));
+//import Faqs from "../components/Faqs/index"
+const Serving = dynamic(() => import('../components/Serving'));
+//import Serving from "../components/Serving"
+
+const Knowmore = dynamic(() => import('../components/Knowmore'));
+
+//const Header = dynamic(() => import('../components/Header'));
+//const Maincategory = dynamic(() => import('../components/Maincategory/maincategory'));
+//import Knowmore from "../components/Knowmore"
 import Head from 'next/head'
 import Header from "../components/Header";
 export default function Home() {
@@ -35,7 +65,7 @@ export default function Home() {
 
         <Header />
 
-        <Slider />
+        <DynamicInnerComp />
         {localStorage.getItem('devise') === 'D' ? (<>
           <div className="col-12 " style={{ marginTop: '50px' }}>
             <hr style={{ border: '2px solid rgb(102, 102, 102)', margin: '10px', boxShadow: 'rgba(0, 0, 0, 0.25) 0px 0.5px 0.5px', backgroundColor: 'rgb(255, 255, 255)' }} />
@@ -53,9 +83,9 @@ export default function Home() {
           </>
         )}
 
-        {localStorage.getItem('devise') === 'D' ? (<Maincategory />) : (<> <hr className="hr-white"></hr>
+        {localStorage.getItem('devise') === 'D' ? (<DynamicInnerComp2 />) : (<> <hr className="hr-white"></hr>
 
-          <Maincategorymobile /></>)}
+          <DynamicInnerCompmobile /></>)}
 
 
 

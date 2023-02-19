@@ -2,10 +2,14 @@ import React from "react"
 import "../styles/globals.css";
 import "../styles/mobilepage.css";
 import 'bootstrap/dist/css/bootstrap.css'
+import dynamic from 'next/dynamic'
 import { Provider } from "react-redux";
 import store from "../store/store";
 import { PersistGate } from "redux-persist/integration/react";
-import Layout from '../components/Layout/index'
+//import Layout from '../components/Layout/index'
+
+const Layout = dynamic(() => import('../components/Layout/index'));
+
 import "font-awesome/css/font-awesome.css";
 import 'swiper/css';
 import Script from 'next/script'
@@ -16,6 +20,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router';
 import { hotjar } from 'react-hotjar';
 function MyApp({ Component, pageProps }) {
+
     useEffect(() => {
         hotjar.initialize(3302739, 6)
     }, [])
